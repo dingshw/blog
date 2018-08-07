@@ -310,6 +310,334 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dingshw.github.io/blog/blog/2018/08/07/cssBasic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="dingsw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dingsw's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/08/07/cssBasic/" itemprop="url">
+                  Untitled
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-08-07 11:19:34 / Modified: 16:53:21" itemprop="dateCreated datePublished" datetime="2018-08-07T11:19:34+08:00">2018-08-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="CSS基础"><a href="#CSS基础" class="headerlink" title="CSS基础"></a>CSS基础</h2><h3 id="css的盒子模型，低版本IE的区别"><a href="#css的盒子模型，低版本IE的区别" class="headerlink" title="css的盒子模型，低版本IE的区别"></a>css的盒子模型，低版本IE的区别</h3><p>有两种： IE盒模型，W3C盒模型<br>盒模型：内容（content）填充（padding）边界（margin）边框（border）<br>区别：IE的content部分把border和padding都计算进去 IE5以下会是这样，<br>现在可以设置box-sizing: border-box，width = content + border + padding<br>W3C盒模型 默认 content-box，width = content</p>
+<h3 id="css选择符有哪些，那些属性可以继承"><a href="#css选择符有哪些，那些属性可以继承" class="headerlink" title="css选择符有哪些，那些属性可以继承"></a>css选择符有哪些，那些属性可以继承</h3><p>（1）id选择器（#id）<br>（2）类选择器（.class）<br>（3）标签选择器（div,h1,p）<br>（4）相邻选择器（h1+p）<br>（5）子选择器（ui &gt; li）<br>（6）后代选择器（li a）<br>（7）通配符（*）<br>（8）属性选择器（a[rel = “external”）<br>（9）伪类选择器（a:hover,li:nth-child）</p>
+<h4 id="可继承的属性"><a href="#可继承的属性" class="headerlink" title="可继承的属性"></a>可继承的属性</h4><p>font-size font-family color UL LI DL DD DT</p>
+<h4 id="不可继承属性"><a href="#不可继承属性" class="headerlink" title="不可继承属性"></a>不可继承属性</h4><p>border padding margin width height</p>
+<h3 id="CSS优先级算法如何计算"><a href="#CSS优先级算法如何计算" class="headerlink" title="CSS优先级算法如何计算"></a>CSS优先级算法如何计算</h3><ul>
+<li>优先级就近原则，同权重情况下样式定义最近者为准;</li>
+<li><p>载入样式以最后载入的定位为准;</p>
+<p>优先级为:</p>
+<pre><code>同权重: 内联样式表（标签内部）&gt; 嵌入样式表（当前文件中）&gt; 外部样式表（外部文件中）。
+!important &gt;  id &gt; class &gt; tag
+important 比 内联优先级高
+</code></pre><h3 id="CSS3新增伪类有那些"><a href="#CSS3新增伪类有那些" class="headerlink" title="CSS3新增伪类有那些"></a>CSS3新增伪类有那些</h3><p>举例：</p>
+<pre><code>p:first-of-type 选择属于其父元素的首个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。
+p:last-of-type  选择属于其父元素的最后 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。
+p:only-of-type  选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。
+p:only-child    选择属于其父元素的唯一子元素的每个 &lt;p&gt; 元素。
+p:nth-child(2)  选择属于其父元素的第二个子元素的每个 &lt;p&gt; 元素。
+
+:after          在元素之前添加内容,也可以用来做清除浮动。
+:before         在元素之后添加内容
+:enabled        
+:disabled       控制表单控件的禁用状态。
+:checked        单选框或复选框被选中。
+</code></pre><h3 id="如何居中div"><a href="#如何居中div" class="headerlink" title="如何居中div"></a>如何居中div</h3><p>水平居中：给DIV宽度，margin 0 auto<br>div {<br>width: 200px;<br>margin: 0 auto;<br>}<br>让绝对定位的div居中<br>div {<br>position: absolute;<br>width: 200px;<br>height: 200px;<br>margin: auto;<br>left: 0;<br>right: 0;<br>top: 0;<br>bottom: 0;<br>background: red;<br>}<br>水平垂直居中：<br>（1）确定容器的宽高，设置层的外边距<br>div {<br>position: relative;<br>width: 500px;<br>height: 200px;<br>top: 50%;<br>left: 50%;<br>margin: -100px 0 0 -250px;<br>background: red;<br>}<br>（2）未知宽高，利用transform<br>div {<br>position: absolute;<br>width: 500px;<br>height: 300px;<br>left: 50%;<br>top: 50%;<br>transform: translate(-50%, -50%);<br>background: red;<br>}<br>（3）flex 布局<br>.container {<br>display: flex;<br>align-items: center;<br>justify-content: center;<br>}<br>.container div {<br>width: 100px;<br>height: 100px;<br>background: red;<br>}</p>
+<h3 id="display有哪些值？说明他们的作用"><a href="#display有哪些值？说明他们的作用" class="headerlink" title="display有哪些值？说明他们的作用"></a>display有哪些值？说明他们的作用</h3><p>block         块类型。默认宽度为父元素宽度，可设置宽高，换行显示。<br>none          缺省值。象行内元素类型一样显示。<br>inline        行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。<br>inline-block  默认宽度为内容宽度，可以设置宽高，同行显示。<br>list-item     象块类型元素一样显示，并添加样式列表标记。<br>table         此元素会作为块级表格来显示。<br>inherit       规定应该从父元素继承 display 属性的值。</p>
+<h3 id="position的值relative和absolute定位原点是？"><a href="#position的值relative和absolute定位原点是？" class="headerlink" title="position的值relative和absolute定位原点是？"></a>position的值relative和absolute定位原点是？</h3><p>absolute<br>生成绝对定位的元素，相对于值不为 static的第一个父元素进行定位。<br>fixed （老IE不支持）<br>生成绝对定位的元素，相对于浏览器窗口进行定位。<br>relative<br>生成相对定位的元素，相对于其正常位置进行定位。<br>static<br>默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。<br>inherit<br>规定从父元素继承 position 属性的值。</p>
+<h3 id="CSS3有哪些新特性"><a href="#CSS3有哪些新特性" class="headerlink" title="CSS3有哪些新特性"></a>CSS3有哪些新特性</h3><p>新增各种CSS选择器    （: not(.input)：所有 class 不是“input”的节点）<br>(1) 关联选择器 E1~E2(选择E1后面紧邻的E2元素)<br>//注意与毗邻选择器的区别其会跳过中间其他的继续关联，而毗邻选择器如果遇到下一个标签不是则断掉<br>.box p~p {background: green}</p>
+</li>
+</ul>
+<p>圆角            （border-radius:8px）<br>多列布局      （multi-column layout）<br>阴影和反射 （Shadow\Reflect）<br>文字特效      （text-shadow、）<br>文字渲染      （Text-decoration）<br>线性渐变      （gradient）<br>旋转            （transform）<br>缩放,定位,倾斜,动画,多背景<br>例如:transform:\scale(0.85,0.90)\ translate(0px,-30px)\ skew(-9deg,0deg)\Animation:</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dingshw.github.io/blog/blog/2018/08/06/htmlBasic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="dingsw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dingsw's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/08/06/htmlBasic/" itemprop="url">
+                  Untitled
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-08-06 16:18:10 / Modified: 18:36:16" itemprop="dateCreated datePublished" datetime="2018-08-06T16:18:10+08:00">2018-08-06</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="html基础"><a href="#html基础" class="headerlink" title="html基础"></a>html基础</h2><h3 id="Doctype-作用，标准模式和兼容模式的区别"><a href="#Doctype-作用，标准模式和兼容模式的区别" class="headerlink" title="Doctype 作用，标准模式和兼容模式的区别"></a>Doctype 作用，标准模式和兼容模式的区别</h3><p>（1）&lt;!Doctype&gt;声明位于Html文档的第一行，告诉浏览器按照什么文档格式解析，写错或者不写都会按照兼容模式解析<br>（2）标准模式是按照浏览器的最高标准执行，兼容模式按照宽松的向后兼容的显示。</p>
+<h3 id="行内元素有哪些，块级元素有哪些"><a href="#行内元素有哪些，块级元素有哪些" class="headerlink" title="行内元素有哪些，块级元素有哪些"></a>行内元素有哪些，块级元素有哪些</h3><p>（1）行内元素 a b span img input select strong。<br>（2）块级元素 div li ui ol dt dd h1 h2 …<br>（3）空元素 img input link meta br hr area col base </p>
+<h3 id="页面导入样式，meta-import有什么区别"><a href="#页面导入样式，meta-import有什么区别" class="headerlink" title="页面导入样式，meta @import有什么区别"></a>页面导入样式，meta @import有什么区别</h3><p>（1）link属于XHTML标签，除了有加载CSS作用，还可以用于定义RSS，定义rel连接属性，而import是css提供的，只能用于加载CSS<br>（2）页面被加载时，link会同时被加载，而@import只有页面加载完后再加载<br>（3）import是css2.1提出的，ie5以上支持，link是xhtml标签没有兼容问题</p>
+<h3 id="介绍下浏览器内核的理解"><a href="#介绍下浏览器内核的理解" class="headerlink" title="介绍下浏览器内核的理解"></a>介绍下浏览器内核的理解</h3><p>主要分为两部分，渲染引擎和，JS引擎<br>渲染引擎负责网页的内容hmtl xml 图像等，整理讯息css等，计算网页的显示方式，输出到显示器或者打印设备，浏览器的内核的不同，渲染的效果也是不同，所有网页浏览器、邮件客户端以及需要编辑显示网络内容的应用程序都需要浏览器内核<br>JS引擎，负责解析和执行JavaScript来实现网页的动效<br>最开始渲染引擎和js引擎并没有区别的很明确，现在JS引擎越来越独立，内核倾向于只指渲染引擎</p>
+<h4 id="常见的浏览器内核有"><a href="#常见的浏览器内核有" class="headerlink" title="常见的浏览器内核有"></a>常见的浏览器内核有</h4><p>（1）Trident内核 IE 360 搜狗等<br>（2）webkit chrome safari</p>
+<h3 id="html5新特性-怎么解决兼容问题，如何区分HTML和HTML5"><a href="#html5新特性-怎么解决兼容问题，如何区分HTML和HTML5" class="headerlink" title="html5新特性 怎么解决兼容问题，如何区分HTML和HTML5"></a>html5新特性 怎么解决兼容问题，如何区分HTML和HTML5</h3><p>HTML5 现在不再是SGML的子集，主要是关于图像、位置、存储、多任务等功能的新增<br>（1）绘图canvas<br>（2）媒体播放 video audio<br>（3）本地离线存储 localstorge 长期存储数据，浏览器关闭数据不丢失<br>（4）sessionstorge 的数据关闭浏览器则自动删除<br>（5）语义化更好的标签，<article> <nav> <footer> <header> <section><br>（6）表单控件 calender data time email url search<br>（7）webworker websockect geolocation</section></header></footer></nav></article></p>
+<h4 id="兼容问题"><a href="#兼容问题" class="headerlink" title="兼容问题"></a>兼容问题</h4><p>（1）采用document.creatElement方式创建标签<br>（2）采用hml5shim框架处理兼容问题</p>
+<h4 id="区分HTML和html5"><a href="#区分HTML和html5" class="headerlink" title="区分HTML和html5"></a>区分HTML和html5</h4><p>Doctype声明、新增的结构元素或者功能元素</p>
+<h3 id="简述下对HTML语义化的理解"><a href="#简述下对HTML语义化的理解" class="headerlink" title="简述下对HTML语义化的理解"></a>简述下对HTML语义化的理解</h3><p>用正确的标签描述正确的事情<br>HTML语义化让页面的内容结构化，便于对浏览器搜索引擎的解析<br>即使在没有css的情况下，也以一种文档的格式显示，容易阅读<br>利于SEO，代码更容易维护和阅读</p>
+<h3 id="HTML5的离线存储怎么使用，工作原理"><a href="#HTML5的离线存储怎么使用，工作原理" class="headerlink" title="HTML5的离线存储怎么使用，工作原理"></a>HTML5的离线存储怎么使用，工作原理</h3><p>在用户没有互联网的连接，也可以正常访问站点和应用，在用户连接互联网时更新用户机器上的缓存文件<br>原理：HTML5的离线存储基于一个新建的.appcache文件的缓存机制，通过这个文件上的解析清单离线缓存资源，之后当网络处于离线状态时，浏览会通过缓存的数据显示页面。</p>
+<h4 id="如何使用："><a href="#如何使用：" class="headerlink" title="如何使用："></a>如何使用：</h4><p>1、在页面头部，<html lang="en" manifest="manifest.appcache"><br>2、关于manifest.appcache文件，基本格式为三段： CACHE， NETWORK，与 FALLBACK，其中NETWORK和FALLBACK为可选项，而第一行CACHE MANIFEST为固定格式，必须写在前面。<br>3、在离线状态时，操作window.applicationCache进行需求实现。<br>参考：<a href="https://yanhaijing.com/html/2014/12/28/html5-manifest/" target="_blank" rel="noopener">https://yanhaijing.com/html/2014/12/28/html5-manifest/</a><br><a href="https://segmentfault.com/a/1190000000732617" target="_blank" rel="noopener">https://segmentfault.com/a/1190000000732617</a></html></p>
+<h4 id="浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢？"><a href="#浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢？" class="headerlink" title="浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢？"></a>浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢？</h4><p>在线的情况下，浏览器发现html头部有manifest属性，它会请求manifest文件，如果是第一次访问app，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。如果已经访问过app并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。<br>离线的情况下，浏览器就直接使用离线存储的资源。</p>
+<h3 id="请描述一下-cookies，sessionStorage-和-localStorage-的区别？"><a href="#请描述一下-cookies，sessionStorage-和-localStorage-的区别？" class="headerlink" title="请描述一下 cookies，sessionStorage 和 localStorage 的区别？"></a>请描述一下 cookies，sessionStorage 和 localStorage 的区别？</h3><p>（1）cookie是网站为了标识用户身份存储在用户本地终端的数据。cookie数据始终在同源的HTTP请求中携带，在浏览器和服务器间传递。<br>存储大小：cookie只有4K<br>（2）sessionstorage和localstorage不会自动把数据发送给服务端，仅保存在本地<br>存储大小，比cookie大，可以达到5M左右。<br>有效时间<br>cookie 设置的cookie过期时间之前都有效，即使浏览器关闭也存在。<br>sessionstorage 数据在浏览器关闭后自动删除。<br>localstorage 持久存储数据，浏览器关闭后数据不丢失，除非主动删除</p>
+<h3 id="iframe有哪些缺点？"><a href="#iframe有哪些缺点？" class="headerlink" title="iframe有哪些缺点？"></a>iframe有哪些缺点？</h3><p>（1）iframe会阻塞主页面的onload事件<br>（2）搜索引擎无法解析这种界面，不利于SEO<br>（3）iframe和主页面共享连接池，而浏览器对于相同域的连接有限制，会影响页面的并行加载<br>使用iframe之前需要考虑这两个缺点。如果需要使用iframe，最好是通过javascript，动态给iframe添加src属性值，这样可以绕开以上两个问题。</p>
+<h4 id="Label的作用是什么？是怎么用的？"><a href="#Label的作用是什么？是怎么用的？" class="headerlink" title="Label的作用是什么？是怎么用的？"></a>Label的作用是什么？是怎么用的？</h4><p>label标签来定义表单控制间的关系,当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上。</p>
+<p>  <label for="Name">Number:</label><br>  <input type="“text“name="Name"" id="Name"></p>
+<p>  <label>Date:<input type="text" name="B"></label></p>
+<h3 id="如何实现浏览器内多个标签页之间的通信"><a href="#如何实现浏览器内多个标签页之间的通信" class="headerlink" title="如何实现浏览器内多个标签页之间的通信?"></a>如何实现浏览器内多个标签页之间的通信?</h3><p>  WebSocket、SharedWorker；<br>  也可以调用localstorge、cookies等本地存储方式；</p>
+<p>  localstorge另一个浏览上下文里被添加、修改或删除时，它都会触发一个事件，<br>  我们通过监听事件，控制它的值来进行页面信息通信；<br>  注意：Safari 在无痕模式下设置localstorge值时会抛出 QuotaExceededError 的异常。</p>
+<h4 id="webSocket如何兼容低浏览器？"><a href="#webSocket如何兼容低浏览器？" class="headerlink" title="webSocket如何兼容低浏览器？"></a>webSocket如何兼容低浏览器？</h4><p>  Adobe Flash Socket 、<br>  ActiveX HTMLFile (IE) 、<br>  基于 multipart 编码发送 XHR 、<br>  基于长轮询的 XHR</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://dingshw.github.io/blog/blog/2018/07/26/webTotal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -680,7 +1008,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-07-26 10:45:08" itemprop="dateModified" datetime="2018-07-26T10:45:08+08:00">2018-07-26</time>
+                <time title="Modified: 2018-08-06 16:51:38" itemprop="dateModified" datetime="2018-08-06T16:51:38+08:00">2018-08-06</time>
               
             
           </span>
@@ -718,6 +1046,25 @@
             <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>掌握的技术，需要会用的工具</p>
 <h3 id="开发技术"><a href="#开发技术" class="headerlink" title="开发技术"></a>开发技术</h3><p>HTML CSS JavaScript</p>
 <h3 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h3><p>webstorm git vscode 对应的调试器和chorme调试器</p>
+<h3 id="手动编写一个ajax，不依赖第三方库"><a href="#手动编写一个ajax，不依赖第三方库" class="headerlink" title="手动编写一个ajax，不依赖第三方库"></a>手动编写一个ajax，不依赖第三方库</h3><p><script><br>  var xhr = new XMLHttpRequest()<br>  xhr.open(‘get’, ‘/api’, false)<br>  xhr.onreadstatechange = function () {<br>    //异步执行函数<br>    if (xhr.readState === 4) {<br>      if (xhr.status === 200) {<br>        alert(xht.responseText)<br>      }<br>    }<br>  }<br>  xhr.send(null)<br>  //ie 低版本使用 ActivXObject<br></script></p>
+<h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><h4 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h4><p>浏览器有同源策略，不允许ajax访问其他域接口 http 默认 80 httos 默认 443</p>
+<h4 id="跨域条件"><a href="#跨域条件" class="headerlink" title="跨域条件"></a>跨域条件</h4><p>不同源，协议、域名、端口有一个不同就是跨域</p>
+<h4 id="可以跨域的三个标签"><a href="#可以跨域的三个标签" class="headerlink" title="可以跨域的三个标签"></a>可以跨域的三个标签</h4><p><img scr="XXX"> <link href="XXX"> <script src="XXX"></script></p>
+<h4 id="三个标签的场景"><a href="#三个标签的场景" class="headerlink" title="三个标签的场景"></a>三个标签的场景</h4><p>img 用于打点统计，统计网站可能是其他域的<br>link,script 可以使用CDN,cdn也可以是其他域的<br>script 可以用于JSONP</p>
+<h4 id="1、JSONP实现原理"><a href="#1、JSONP实现原理" class="headerlink" title="1、JSONP实现原理"></a>1、JSONP实现原理</h4><p>请求的地址是跨域的，则请求的这个接口返回一个callback，然后请求方在接收这个callback<br>我们可以先定义一个函数，然后我们请求外域的API，api返回一个JS片段，就是执行这个函数的片段，然后把参数传递回来。</p>
+<h4 id="2、设置请求-header-服务端设置-Access-Control-Allow-Origin"><a href="#2、设置请求-header-服务端设置-Access-Control-Allow-Origin" class="headerlink" title="2、设置请求 header 服务端设置 Access-Control-Allow-Origin"></a>2、设置请求 header 服务端设置 Access-Control-Allow-Origin</h4><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="数组forEach遍历"><a href="#数组forEach遍历" class="headerlink" title="数组forEach遍历"></a>数组forEach遍历</h4><p><script><br>  var arr = [1,2,3,4]<br>  arr.forEach(function(item, index){<br>    console(index, item)<br>  })<br></script></p>
+<h4 id="every-判断所有元素是否符合条件"><a href="#every-判断所有元素是否符合条件" class="headerlink" title="every 判断所有元素是否符合条件"></a>every 判断所有元素是否符合条件</h4><p><scirpt><br>  var arr1 = [1,2,3]<br>  var result = arr1.every(function(item, index) {<br>    // 判断所有元素都满足条件<br>    if (item&lt;4) {<br>      return true<br>    }<br>  })<br>  console.log(result)<br></scirpt></p>
+<h4 id="some-判断至少一个元素符合条件"><a href="#some-判断至少一个元素符合条件" class="headerlink" title="some 判断至少一个元素符合条件"></a>some 判断至少一个元素符合条件</h4><p><script><br>  var arr2 = [1,2,3]<br>  var result1 = arr2.some(function(item, index){<br>    // 用于判断所有元素，有一个满足条件即可<br>    if (item &lt;2) {<br>      return true<br>    }<br>  })<br></script></p>
+<h4 id="sort-排序"><a href="#sort-排序" class="headerlink" title="sort 排序"></a>sort 排序</h4><p><script><br>  var arr3 = [1,3,4,2,5]<br>  var arr4 = arr3.sort(function(a,b){<br>    // 从小到大<br>    return a-b<br>  })<br>  // 冒泡排序 每趟把最大或者最小的放到最右边<br>  function bubbleSort(arr) {<br>    var len = arr.length<br>    var temp;<br>    for (var i=0; i&lt;len; i++) {<br>      for (var j=0; j<len - 1 -i; j++) {
+        if (arr[j] > arr[j+1]) {<br>          temp = arr[j]<br>          arr[j] = arr[j+1]<br>          arr[j+1] = temp<br>        }<br>      }<br>    }<br>  }<br>  var arr5 = bubbleSort(arr3)<br>  // 选择排序，n,第i个和后面的n-i个元素作比较，每次选出最小或者最大的放到i的位置<br>  function selectionSort(arr) {<br>    var len = arr.length<br>    var minIndex = 0<br>    for (var i=0; i&lt;len-1; i++) {<br>      for (var j=i+1; j&lt;len; j++) {<br>        if (arr[j]&lt;arr[minIndex]) {<br>          minIndex = j<br>        }<br>      }<br>      if (minIndex !== i) {<br>        var temp = arr[i]<br>        arr[i] = arr[minIndex]<br>        arr[minIndex] = temp<br>      }<br>    }<br>  }<br>  var arr6 = selectionSort(arr3)<br>  // 插入排序 n个，第i个和之前的所有元素比较 插入到比i小的前面<br>  function insertionSort(arr) {<br>    for(var i=0; i&lt;arr.len; i++) {<br>      var key = arr[i]<br>      var j = i-1<br>      while (arr[j] &lt; key) {<br>        arr[j+1] = arr[j]<br>        j–<br>      }<br>      arr[j+1] = key<br>    }<br>  }<br>  // 归并排序 递归 分割成最小的两份一次比较，<br>  function mergeSort (arr) {<br>    var len = arr.length<br>    if (len &lt;2) {<br>      return arr<br>    }<br>    var middle = Math.floor(len)<br>    var left = arr.slice(0, middle)<br>    var right = arr.slice(middle)<br>    return merge(mergeSort(left), mergeSort(right))<br>  }<br>  function merge (left, right) {<br>    var result = []<br>    while(left.length &amp;&amp; right.length) {<br>      if (left[0] &lt; right[0])) {<br>        result.push(left.shift())<br>      } else {<br>        result.push(right.shift())<br>      }<br>    }<br>    while(left.length) {<br>      result.push(left.shift())<br>    }<br>    while(right.length) {<br>      result.push(right.shift())<br>    }<br>    return result<br>  }<br>  // 快速排序 二分法 递归<br>  function quickSort(arr) {<br>    var len = arr.length<br>    if(len&lt;=1) {<br>      return arr<br>    }<br>    var m = Math.floor(len/2)<br>    var mValue = arr.splice(m,1)<br>    var leftArry = [], right = []<br>    for(var i=0; i&lt;len; i++) {<br>      if(mValue &gt; arr[i]) {<br>        leftArry.push(arr[i])<br>      } else {<br>        rightArry.push(arr[i])<br>      }<br>    }<br>    quickSort(leftArry).concat(mValue, quickSort(rightArry))<br>  }<br></script></p>
+<h4 id="map-filter"><a href="#map-filter" class="headerlink" title="map filter"></a>map filter</h4><p><script><br>  var arr = [12,3,2,4,6]<br>  var arr1 = arr.map(function(item, index){<br>    return item + ‘_map’<br>  })<br>  var arr2 = arr.filter(function(item, idnex) {<br>    return item &gt; 2<br>  })<br></script></p>
+<h4 id="对象遍历-for-in"><a href="#对象遍历-for-in" class="headerlink" title="对象遍历 for in"></a>对象遍历 for in</h4><p><script><br>  var obj = {a:100,b:120}<br>  for (var key in obj) {<br>    if(obj.hasOwnProperty(key)) {<br>      console.log()<br>    }<br>  }<br></script></p>
+<h4 id="写一个能遍历对象和数组的通用的foreach函数"><a href="#写一个能遍历对象和数组的通用的foreach函数" class="headerlink" title="写一个能遍历对象和数组的通用的foreach函数"></a>写一个能遍历对象和数组的通用的foreach函数</h4><p><script><br>  function foreach(obj, fn) {<br>    if (obj instanceof Array) {<br>      obj.forEach(function(item, index){<br>        fn(index, item)<br>      })<br>    } else {<br>      for (var key in obj) {<br>        if (obj.hasOwnProperty(key)){<br>          fn(key, obj[key])<br>        }<br>      }<br>    }<br>  }<br></script></p>
+<h4 id="document-onload-和-jquert-的-docuemnt-ready-function-区别，原生实现ready"><a href="#document-onload-和-jquert-的-docuemnt-ready-function-区别，原生实现ready" class="headerlink" title="document.onload 和 jquert 的 $(docuemnt).ready(function(){}) 区别，原生实现ready"></a>document.onload 和 jquert 的 $(docuemnt).ready(function(){}) 区别，原生实现ready</h4><p>onload 是当页面内所有元素加载完毕后包括图片脚本等都加载完后执行的。<br>ready 是当页面文档加载完后就执行.<br>原生实现ready</p>
+<p><script><br>  docuemnt.ready = function(callback) {<br>    if(document.addEventListener) {<br>      document.addEventListener(‘DOMContentLoaded’, function(){<br>        document.remobeEventListener(‘DOMContentLoaded’, arguments.callee, false)<br>        callback()<br>      })<br>    } else if(document.attachEvent) {//兼容IE<br>      document.attachEvent(‘onReadyStatechange’, function() {<br>        if(document.readystate === ‘complete’) {<br>          document.detachEvent(‘onReadyStatechange’, arguments.callee)<br>          callback()<br>        }<br>      })<br>    } else if(document.lastchild == document.body) {<br>      callback()<br>    }<br>  }<br></script></p>
+<h4 id="事件委托机制"><a href="#事件委托机制" class="headerlink" title="事件委托机制"></a>事件委托机制</h4><p>原理：利用冒泡的原理把事件委托给父级触发<br>jquery的$.on 直接将事件绑定到父级，并且不触发父级事件</p>
+<h4 id="js判断是否是json对象"><a href="#js判断是否是json对象" class="headerlink" title="js判断是否是json对象"></a>js判断是否是json对象</h4><p>var isJson = function(obj) {<br>  return typeOf(obj) == ‘object’ &amp;&amp; Object.prototype.toValue.call(obj).toLowerCase() === ‘[object, object]’ &amp;&amp; !obj.length<br>}</p>
+<h4 id="初始化数组"><a href="#初始化数组" class="headerlink" title="初始化数组"></a>初始化数组</h4><p>var arry = Array.from({length: 36}, ()=&gt; 1)</p>
 
           
         
@@ -799,7 +1146,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
