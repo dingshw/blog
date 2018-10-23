@@ -420,7 +420,7 @@
 <h3 id="请描述一下-cookies，sessionStorage-和-localStorage-的区别？"><a href="#请描述一下-cookies，sessionStorage-和-localStorage-的区别？" class="headerlink" title="请描述一下 cookies，sessionStorage 和 localStorage 的区别？"></a>请描述一下 cookies，sessionStorage 和 localStorage 的区别？</h3><p>（1）cookie是网站为了标识用户身份存储在用户本地终端的数据。cookie数据始终在同源的HTTP请求中携带，在浏览器和服务器间传递。<br>存储大小：cookie只有4K<br>（2）sessionstorage和localstorage不会自动把数据发送给服务端，仅保存在本地<br>存储大小，比cookie大，可以达到5M左右。<br>有效时间<br>cookie 设置的cookie过期时间之前都有效，即使浏览器关闭也存在。<br>sessionstorage 数据在浏览器关闭后自动删除。<br>localstorage 持久存储数据，浏览器关闭后数据不丢失，除非主动删除</p>
 <h3 id="iframe有哪些缺点？"><a href="#iframe有哪些缺点？" class="headerlink" title="iframe有哪些缺点？"></a>iframe有哪些缺点？</h3><p>（1）iframe会阻塞主页面的onload事件<br>（2）搜索引擎无法解析这种界面，不利于SEO<br>（3）iframe和主页面共享连接池，而浏览器对于相同域的连接有限制，会影响页面的并行加载<br>使用iframe之前需要考虑这两个缺点。如果需要使用iframe，最好是通过javascript，动态给iframe添加src属性值，这样可以绕开以上两个问题。</p>
 <h4 id="Label的作用是什么？是怎么用的？"><a href="#Label的作用是什么？是怎么用的？" class="headerlink" title="Label的作用是什么？是怎么用的？"></a>Label的作用是什么？是怎么用的？</h4><p>label标签来定义表单控制间的关系,当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上。</p>
-<p>  <label for="Name">Number:</label><br>  <input type="“text“name="Name"" id="Name"></p>
+<p>  <label for="Name">Number:</label><br>  <input type="“text“name=" name""="" id="Name"></p>
 <p>  <label>Date:<input type="text" name="B"></label></p>
 <h3 id="如何实现浏览器内多个标签页之间的通信"><a href="#如何实现浏览器内多个标签页之间的通信" class="headerlink" title="如何实现浏览器内多个标签页之间的通信?"></a>如何实现浏览器内多个标签页之间的通信?</h3><p>  WebSocket、SharedWorker；<br>  也可以调用localstorge、cookies等本地存储方式；</p>
 <p>  localstorge另一个浏览上下文里被添加、修改或删除时，它都会触发一个事件，<br>  我们通过监听事件，控制它的值来进行页面信息通信；<br>  注意：Safari 在无痕模式下设置localstorge值时会抛出 QuotaExceededError 的异常。</p>
